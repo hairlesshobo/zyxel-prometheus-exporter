@@ -28,7 +28,7 @@ firmware (like the XGS1250-12).
 git clone https://github.com/josteink/zyxel-prometheus-exporter
 cd zyxel-prometheus-exporter
 npm ci
-npx playwright install
+npx playwright install chromium
 SWITCH_IP=192.168.1.3 SWITCH_PASSWORD=yourpass node index.mjs
 ```
 
