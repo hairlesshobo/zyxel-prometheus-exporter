@@ -29,7 +29,7 @@ git clone https://github.com/josteink/zyxel-prometheus-exporter
 cd zyxel-prometheus-exporter
 npm ci
 npm run init
-SWITCH_IP=192.168.1.3 SWITCH_PASSWORD=yourpass node index.mjs
+SWITCH_IP=192.168.1.3 SWITCH_PASSWORD=yourpass npm run start
 ```
 
 ## Example output

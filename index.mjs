@@ -2,8 +2,13 @@
 import express from 'express';
 import { chromium } from 'playwright';
 
-const SWITCH_IP = process.env.SWITCH_IP || 'http://192.168.1.3';
+const SWITCH_IP = process.env.SWITCH_IP || '192.168.1.3';
 const SWITCH_PASSWORD = process.env.SWITCH_PASSWORD;
+
+if (!SWITCH_PASSWORD) {
+  console.error("❌ Missing required config-value SWITCH_PASSWORD.");
+  process.exit(1);
+}
 
 const SWITCH_URL = `http://${SWITCH_IP}`;
 const SCRAPE_INTERVAL_MS = 15000;

@@ -5,9 +5,10 @@
   "license": "MIT",
   "author": "Jostein Kjønigsen",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
-    "init": "npx playwright install chromium"
+    "init": "npx playwright install chromium",
+    "start": "node index.mjs"
   },
   "dependencies": {
     "express": "^5.1.0",
