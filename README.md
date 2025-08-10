@@ -12,6 +12,16 @@ Switch, the following software is required:
 - NodeJS
 - npm
 
+**NOTE:** This module is designed to work on Zyxel switches without
+SNMP support. It may work on those swicthes too, but that has not been
+tested and can not be guaranteed.
+
+## Supported units
+
+Tested on a Zyxel XGS1210-12 switch with firmware-version `V2.00(ABTY.1)C0`.
+I'm assuming it works equally well on other Zyxel switches using similar
+firmware (like the XGS1250-12).
+
 ## Initial Setup
 
 ```sh
