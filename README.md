@@ -44,28 +44,41 @@ npm run start
 
 ```
 # curl http://localhost:3000/metrics
+# Last updated: Mon Aug 11 2025 07:46:42 GMT+0200 (Central European Summer Time)
 node_network_receive_packets_total{device="eth1"} 919283443
-node_network_transmit_packets_total{device="eth1"} 1142682602
-node_network_receive_packets_total{device="eth2"} 36465308
-node_network_transmit_packets_total{device="eth2"} 119648795
+node_network_receive_packets_total{device="eth2"} 36550621
 node_network_receive_packets_total{device="eth3"} 0
-node_network_transmit_packets_total{device="eth3"} 0
 node_network_receive_packets_total{device="eth4"} 0
-node_network_transmit_packets_total{device="eth4"} 0
-node_network_receive_packets_total{device="eth5"} 1119223
-node_network_transmit_packets_total{device="eth5"} 117963207
-node_network_receive_packets_total{device="eth6"} 730643
-node_network_transmit_packets_total{device="eth6"} 1659038
+node_network_receive_packets_total{device="eth5"} 1121100
+node_network_receive_packets_total{device="eth6"} 753238
 node_network_receive_packets_total{device="eth7"} 0
-node_network_transmit_packets_total{device="eth7"} 0
-node_network_receive_packets_total{device="eth8"} 32922264
-node_network_transmit_packets_total{device="eth8"} 232463860
-node_network_receive_packets_total{device="eth9"} 4581140470
-node_network_transmit_packets_total{device="eth9"} 3068783382
-node_network_receive_packets_total{device="eth10"} 165994503
-node_network_transmit_packets_total{device="eth10"} 478667891
+node_network_receive_packets_total{device="eth8"} 32957384
+node_network_receive_packets_total{device="eth9"} 4601940601
+node_network_receive_packets_total{device="eth10"} 166184974
 node_network_receive_packets_total{device="eth11"} 0
+node_network_receive_packets_total{device="eth12"} 6951510378
+node_network_transmit_packets_total{device="eth1"} 1142682602
+node_network_transmit_packets_total{device="eth2"} 119888621
+node_network_transmit_packets_total{device="eth3"} 0
+node_network_transmit_packets_total{device="eth4"} 0
+node_network_transmit_packets_total{device="eth5"} 118214487
+node_network_transmit_packets_total{device="eth6"} 1977292
+node_network_transmit_packets_total{device="eth7"} 0
+node_network_transmit_packets_total{device="eth8"} 232761566
+node_network_transmit_packets_total{device="eth9"} 3084774764
+node_network_transmit_packets_total{device="eth10"} 479072763
 node_network_transmit_packets_total{device="eth11"} 0
-node_network_receive_packets_total{device="eth12"} 6935260617
-node_network_transmit_packets_total{device="eth12"} 3608296228
+node_network_transmit_packets_total{device="eth12"} 3629338981
 ```
+
+## systemd-support
+
+Adapart the supplied systemd service template-file, and you're good to go.
+
+```sh
+nano zyxel-prometheus-exporter.service
+sudo cp zyxel-prometheus-exporter.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now zyxel-prometheus-exporter.service
+```
+
