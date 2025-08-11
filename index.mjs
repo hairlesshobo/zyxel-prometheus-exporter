@@ -70,10 +70,6 @@ async function scrapeSwitch() {
       });
     });
 
-    // TODO: packets
-    // node_network_receive_packets_total{device="br0"} 1.5740371e+07
-    // node_network_transmit_packets_total{device="br0"} 3.583849e+06
-
     let result = `# Last updated: ${new Date()}\n`;
     for (const row of extracted) {
       const portName = `eth${row.port}`;
