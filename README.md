@@ -25,11 +25,19 @@ firmware (like the XGS1250-12).
 ## Initial Setup
 
 ```sh
+# get code
 git clone https://github.com/josteink/zyxel-prometheus-exporter
 cd zyxel-prometheus-exporter
+
+# get deps
 npm ci
-npm run init
-SWITCH_IP=192.168.1.3 SWITCH_PASSWORD=yourpass npm run start
+npm run deps
+
+# configure switch IP and passwd
+npm run configure
+
+# start prometheus exporter
+npm run start
 ```
 
 ## Example output

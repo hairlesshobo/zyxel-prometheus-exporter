@@ -1,9 +1,13 @@
 // zyxel_prometheus_exporter - index.js
 import express from 'express';
 import { chromium } from 'playwright';
+import * as dotenv from 'dotenv';
+
+dotenv.config("./.env");
 
 const SWITCH_IP = process.env.SWITCH_IP || '192.168.1.3';
 const SWITCH_PASSWORD = process.env.SWITCH_PASSWORD;
+
 
 if (!SWITCH_PASSWORD) {
   console.error("❌ Missing required config-value SWITCH_PASSWORD.");

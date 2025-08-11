@@ -7,10 +7,12 @@
   "type": "commonjs",
   "main": "index.mjs",
   "scripts": {
-    "init": "npx playwright install chromium",
+    "deps": "npx playwright install chromium",
+    "configure": "./configure.sh",
     "start": "node index.mjs"
   },
   "dependencies": {
+    "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "playwright": "^1.54.2"
   }
