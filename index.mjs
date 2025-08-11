@@ -74,16 +74,21 @@ async function scrapeSwitch() {
     // node_network_receive_packets_total{device="br0"} 1.5740371e+07
     // node_network_transmit_packets_total{device="br0"} 3.583849e+06
 
-    let result = "";
+    let result = `# Last updated: ${new Date()}\n`;
     for (const row of extracted) {
       const portName = `eth${row.port}`;
       result += `node_network_receive_packets_total{device="${portName}"} ${row.rx}\n`;
+    }
+    for (const row of extracted) {
+      const portName = `eth${row.port}`;
       result += `node_network_transmit_packets_total{device="${portName}"} ${row.tx}\n`;
     }
 
     lastMetrics = result;
   } catch (err) {
     console.error('Scrape failed:', err);
+    // retry from scratch next time
+    await page.close();
   }
 }
 
