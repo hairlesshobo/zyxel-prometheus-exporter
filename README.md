@@ -73,7 +73,8 @@ node_network_transmit_packets_total{device="eth12"} 3629338981
 
 ## systemd-support
 
-Adapart the supplied systemd service template-file, and you're good to go.
+Adapt the supplied systemd service template-file, copy it in the
+right place and you're good to go.
 
 ```sh
 nano zyxel-prometheus-exporter.service
