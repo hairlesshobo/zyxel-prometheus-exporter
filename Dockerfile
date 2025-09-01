@@ -23,8 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY . /app 
 
 # get deps
-RUN npm ci 
-RUN npm run deps
+RUN npm ci && npm run deps
 
 # start prometheus exporter
 CMD ["npm", "run", "start"]
