@@ -83,3 +83,14 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now zyxel-prometheus-exporter.service
 ```
 
+## Running with Docker
+
+```sh
+docker build -t zyxel-prometheus-exporter .
+docker run --rm \
+    --name zyxel-prometheus-exporter \
+    -p 3000:3000 \
+    -e SWITCH_IP=192.168.1.10 \
+    -e 'SWITCH_PASSWORD=superSecretPassword1' \
+    zyxel-prometheus-exporter
+```
